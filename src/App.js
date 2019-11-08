@@ -13,7 +13,7 @@ class App extends Component {
     if (this.state.active === true) {
         this.setState({ active: false})
     } else {
-      fetch("https://api.github.com/users/davegregg")
+      fetch("https://api.github.com/users/thurt")
       .then(res => res.json())
       .then(user => {
         this.setState({ user, active: true })
