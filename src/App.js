@@ -7,17 +7,34 @@ class App extends Component {
     active: false
   }
 
-  handletToggle = (event) => {
+  handleToggle = (event) => {
     console.log("button clicked");
-    fetch("https://api.github.com/users/thurt")
-    .then(res => res.json())
-    .then(user => {
-      this.setState({ user })
-    });
+
+    if (this.state.active === true) {
+        this.setState({ active: false})
+    } else {
+      fetch("https://api.github.com/users/davegregg")
+      .then(res => res.json())
+      .then(user => {
+        this.setState({ user, active: true })
+      });
+    }
   };
 
   render() {
-    return <button onClick={this.handleToggle}>Toggle</button>;
+    return (
+    <React.Fragment>
+      <button onClick={this.handleToggle}>Toggle</button>
+      {this.state.active === true && (
+        <div>
+          <img src ={this.state.user.avatar_url} />
+          <h1>{this.state.user.name}</h1>
+          <p>{this.state.user.bio}</p>
+          <p>followers: {this.state.user.followers}</p>
+        </div>
+      )}
+    </React.Fragment>
+    );
   }
 }
 
