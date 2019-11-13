@@ -11,8 +11,5 @@ pages:
     paths:
     - public # mandatory, other folder won't work
   only:
-<<<<<<< HEAD
   - master # or dev, the branch you want to publish
-=======
-  - master # or dev, the branch you want to publish
->>>>>>> 705d0f74de0ec9c439cf7f67eaf4b9a0926e6fee
+
