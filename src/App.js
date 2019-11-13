@@ -27,7 +27,7 @@ class App extends Component {
       <button onClick={this.handleToggle}>Toggle</button>
       {this.state.active === true && (
         <div>
-          <img src ={this.state.user.avatar_url} />
+          <img src ={this.state.user.avatar_url} alt="" />
           <h1>{this.state.user.name}</h1>
           <p>{this.state.user.bio}</p>
           <p>followers: {this.state.user.followers}</p>
